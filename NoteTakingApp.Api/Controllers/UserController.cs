@@ -57,7 +57,7 @@ namespace NoteTakingApp.Api.Controllers
         [HttpPost]
         public async Task<string> LogIn(UserLoginModel user, CancellationToken cancellation = default)
         {
-            var result = await _userService.AuthenticationAsync(cancellation, user.Email, user.Password);
+            var result = await _userService.AuthenticationAsync(cancellation, user.EmailOrUsername, user.Password);
 
             return JWTHelper.GenerateSecurityToken(result, _options);
         }

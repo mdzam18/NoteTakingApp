@@ -14,9 +14,9 @@ namespace NoteTakingApp.Application.User
             _repository = repository;
         }
 
-        public async Task<string> AuthenticationAsync(CancellationToken cancellationToken, string email, string password)
+        public async Task<string> AuthenticationAsync(CancellationToken cancellationToken, string emailOrUsername, string password)
         {
-            var result = await _repository.GetAsync(cancellationToken, email);
+            var result = await _repository.GetAsync(cancellationToken, emailOrUsername);
 
             if (result == null || !password.Equals(result.Password))
                 throw new IncorrectEmailOrPasswordException("email or password is incorrect");
