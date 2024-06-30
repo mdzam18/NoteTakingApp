@@ -1,8 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NoteTakingApp.Domain.Note;
 using NoteTakingApp.Domain.User;
-using System.Collections.Generic;
-using System.Reflection.Emit;
+
 
 namespace NoteTakingApp.Persistence.Context
 {
