@@ -2,7 +2,6 @@
 using NoteTakingApp.Domain.Note;
 using NoteTakingApp.Domain.User;
 
-
 namespace NoteTakingApp.Persistence.Context
 {
     public class NoteTakingAppContext : DbContext
