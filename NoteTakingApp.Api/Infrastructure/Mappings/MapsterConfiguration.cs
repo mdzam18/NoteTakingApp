@@ -20,11 +20,13 @@ namespace NoteTakingApp.Api.Infrastructure.Mappings
 
             TypeAdapterConfig<NoteRequestModel, NoteEntity>
             .NewConfig()
+            .Map(dest => dest.CreatedAt, src => DateTime.UtcNow)
+            .Map(dest => dest.UpdatedAt, src => DateTime.UtcNow)
             .TwoWays();
 
-            TypeAdapterConfig<NoteRequestModel, NoteResponseModel>
-            .NewConfig()
-            .TwoWays();
+            TypeAdapterConfig<NoteEntity, NoteResponseModel>
+                .NewConfig()
+                .TwoWays();
         }
     }
 }
